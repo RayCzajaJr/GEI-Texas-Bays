@@ -859,6 +859,7 @@ PDSIPLOT<-ggplot(AbioticMeans_long, aes(x = YEAR, y = PDSI, color = Bay, group =
     legend.background = element_rect(fill = "white", color = NA), 
     plot.title = element_blank())
 
+
 # combine the three maps into one layout
 ABIOTICPLOT <- grid.arrange(SALPLOT, PDSIPLOT, ncol = 1, nrow = 2)
 ggsave("ABIOTICPLOT.png", ABIOTICPLOT, width = 7, height = 9, dpi = 200)
