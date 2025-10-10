@@ -587,11 +587,12 @@ GBMAP<-ggplot() +
     legend.text = element_text(size = 8), 
     axis.text = element_text(size = 6), 
     axis.title = element_text(size = 6),  
-    plot.title = element_text(size = 12)  
+    plot.title = element_text(size = 10)  
   )+
+  guides(color = guide_legend(nrow = 2, byrow = TRUE)) + 
   annotation_scale(location = "tl", width_hint = 0.3, text_cex = 0.7, unit_category = "metric") + 
-  annotation_north_arrow(location = "bl", which_north = "true", 
-                         pad_x = unit(0.2, "in"), pad_y = unit(0.6, "in"),
+  annotation_north_arrow(location = "tl", which_north = "true", 
+                         pad_x = unit(0.2, "in"), pad_y = unit(0.9, "in"),
                          style = north_arrow_fancy_orienteering)
 
 # AB 
@@ -622,17 +623,18 @@ ABMAP<-ggplot() +
   coord_sf(xlim = c(-97.3, -96.7),
            ylim = c(27.8, 28.3)) +
   geom_point(data = AransasBay_GN_cpue_map, aes(x = X, y = Y, color = Bay_Area), size = 1.5) +
-  labs(x = "Longitude", y = "Latitude", title = "Mission Aransas System", color = "Minor Bay Area") +
+  labs(x = "Longitude", y = "Latitude", title = "Aransas Bay System", color = "Minor Bay Area") +
   theme_bw()+
   scale_color_manual(values = bay_colors_AB) +
   theme(
     legend.position = "bottom",  
-    legend.title = element_text(size = 8),  
-    legend.text = element_text(size = 8),  
-    axis.text = element_text(size = 6),  
+    legend.title = element_text(size = 8), 
+    legend.text = element_text(size = 8), 
+    axis.text = element_text(size = 6), 
     axis.title = element_text(size = 6),  
-    plot.title = element_text(size = 12)  
+    plot.title = element_text(size = 10)  
   )+
+  guides(color = guide_legend(nrow = 2, byrow = TRUE)) + 
   annotation_scale(location = "tl", width_hint = 0.3, text_cex = 0.7, unit_category = "metric") 
   
 
@@ -659,7 +661,7 @@ ABMAP <- ABMAP +
 
 # combine the three maps into one layout
 combined_map <- grid.arrange(ABMAP, GBMAP, ncol = 1, nrow = 2)
-ggsave("combined_map.png", combined_map, width = 6, height = 9, dpi = 200)
+ggsave("combined_map.tiff", combined_map, width = 85, height = 190, dpi = 300, units = "mm")
 
 
 
@@ -838,7 +840,7 @@ PDSIPLOT<-ggplot(AbioticMeans_long, aes(x = YEAR, y = PDSI, color = Bay, group =
       "AransasBay" = "#2a9d8f",
       "GalvestonBay" = "#f28482"),
     labels = c(
-      "AransasBay" = "Mission Aransas System",
+      "AransasBay" = "Aransas Bay System",
       "GalvestonBay" = "Galveston Bay System"))+
   labs(
     x = "Year",

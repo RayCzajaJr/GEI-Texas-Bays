@@ -404,14 +404,17 @@ plot_observed_vs_predicted <- function(df, response_var, yaxis_title, plot_title
     )
   # Extract spearman rho value using base R indexing (avoiding `pull()`)
   rho_value <- results_df$spearman_rho[results_df$Var2 == response_var]
+  
+  min_ci_value <- min(plot_data$lower_ci, na.rm = TRUE)
+  
   # Create the base plot
   p <- ggplot(plot_data, aes(x = Var1)) +
     # Observed values (dots + line)
-    geom_point(aes(y = obs), color = "black") +
-    geom_line(aes(y = obs), color = "black", linewidth = 1) +
+    geom_point(aes(y = obs), color = "black", size =0.3) +
+    geom_line(aes(y = obs), color = "black", linewidth = 0.1) +
     # Predicted values (dots + line)
-    geom_point(aes(y = est), color = predictions_color, size=4) +
-    geom_line(aes(y = est), color = predictions_color, linewidth = 2) +
+    geom_point(aes(y = est), color = predictions_color, size=0.5) +
+    geom_line(aes(y = est), color = predictions_color, linewidth = 0.3) +
     # Confidence interval shading
     geom_ribbon(aes(ymin = lower_ci, ymax = upper_ci), fill = predictions_color, alpha = 0.25) +
     # Formatting
@@ -424,18 +427,18 @@ plot_observed_vs_predicted <- function(df, response_var, yaxis_title, plot_title
     theme_bw() +
     theme(
       legend.position = "none",
-      axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 12),  # Rotate x-axis labels
-      axis.text.y = element_text(size = 12),
-      axis.title.y = element_text(size = 20),
-      axis.title.x = element_text(size = 14),
-      plot.title = element_text(size = 20, hjust = 0.5)
+      axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 4),  # Rotate x-axis labels
+      axis.text.y = element_text(size = 4),
+      axis.title.y = element_text(size = 6.7),
+      axis.title.x = element_text(size = 5),
+      plot.title = element_text(size = 7, hjust = 0.5)
     ) +
     # Add spearman rho annotation in the top right corner
     annotate("text", 
-             x = 2001,  # Adjust for positioning near the right edge
-             y = max(plot_data$obs, na.rm = TRUE) * 1.1,  # Position inside plot near the top
+             x = 1999,  # Adjust for positioning near the right edge
+             y = min_ci_value * .95, 
              label = paste0("Sp. Rho = ", round(rho_value, 2)), 
-             size = 6, 
+             size = 1.9, 
              fontface = "bold", 
              color = "black")
   # If yaxis_title is NA, remove the y-axis title completely
@@ -757,10 +760,10 @@ GB_keystone <- grid.arrange(
                                         Menhaden_TrinityBay, Menhaden_GalvestonBay, Menhaden_WestBay, Menhaden_EastBay,
                                         ncol = 4, nrow = 4)
 
-ggsave("GB_keystone.png", GB_keystone, dpi = 150, bg = "white",
-       width = 3200,
-       height = 2000,
-       units = "px")
+ggsave("GB_keystone.tiff", GB_keystone, dpi = 300, bg = "white",
+       width = 170,
+       height = 100,
+       units = "mm")
 
 # prey plots 
 GB_sciaenid <- grid.arrange(
@@ -770,10 +773,10 @@ GB_sciaenid <- grid.arrange(
   BlueCrabSmall_TrinityBay,BlueCrabSmall_EastBay, BlueCrabSmall_GalvestonBay, BlueCrabSmall_WestBay,
   ncol = 4, nrow = 4)
 
-ggsave("GB_sciaenid.png", GB_sciaenid, dpi = 150, bg = "white",
-       width = 3200,
-       height = 2000,
-       units = "px")
+ggsave("GB_sciaenid.tiff", GB_sciaenid,  dpi = 300, bg = "white",
+       width = 170,
+       height = 100,
+       units = "mm")
 
 AB_keystone <- grid.arrange(
                           BullShark_AransasBay, BullShark_CopanoBay, BullShark_MesquiteBay,
@@ -782,10 +785,10 @@ AB_keystone <- grid.arrange(
                           Menhaden_AransasBay, Menhaden_CopanoBay, Menhaden_MesquiteBay,
                           ncol = 3, nrow = 4)
 
-ggsave("AB_keystone.png", AB_keystone, dpi = 150, bg = "white",
-       width = 3200,
-       height = 2000,
-       units = "px")
+ggsave("AB_keystone.tiff", AB_keystone,  dpi = 300, bg = "white",
+       width = 170,
+       height = 100,
+       units = "mm")
 
 
 AB_sciaenid  <- grid.arrange(
@@ -795,10 +798,10 @@ AB_sciaenid  <- grid.arrange(
   BlueCrabSmall_AransasBay, BlueCrabSmall_CopanoBay, BlueCrabSmall_MesquiteBay,
   ncol = 3, nrow = 4)
 
-ggsave("AB_sciaenid.png", AB_sciaenid, dpi = 150, bg = "white",
-       width = 3200,
-       height = 2000,
-       units = "px")
+ggsave("AB_sciaenid.tiff", AB_sciaenid,  dpi = 300, bg = "white",
+       width = 170,
+       height = 100,
+       units = "mm")
 
 
 

@@ -25,6 +25,8 @@ custom_layout <- matrix(c(
   0, 1.4    # blue crab
 ), ncol = 2, byrow = TRUE)
 
+custom_layout_padded <- custom_layout * 1.5  # 20% bigger
+
 
 # Extract coefficients
 get_part_Sciaenid = function(x){
@@ -71,18 +73,18 @@ plot_qgraph_combined_with_lag <- function(data_ts, coef_matrix_yes_lag, plot_tit
   line_types[nonzero_yes_lag] <- 2  # Dashed line for lagged effects
   
   # Set plot margins
-  par(mar = c(25, 25, 25, 25))  
+  par(mar = c(0, 0, 0, 0))  
   
   # Plot the graph
   qgraph(combined_coef_matrix,         
-         layout = custom_layout,     
+         layout = custom_layout_padded,     
          edge.labels = TRUE,             # Display edge labels
          posCol = "navy",                # Positive relationships in blue
          negCol = "red3",                # Negative relationships in red
          labels =  abbrev_names,           # Variable names
          title = plot_title,             # Plot title
-         title.cex = 5,                  
-         label.cex = 4,                 
+         title.cex = 0.7,                  
+         label.cex = 0.5,                 
          vsize = 10,
          asize = 5,
          edge.label.position = 0.55,
@@ -120,19 +122,19 @@ plot_qgraph_combined_without_lag <- function(data_ts, coef_matrix_no_lag, plot_t
 
   
   # Set plot margins
-  par(mar = c(25, 25, 25, 25))  
+  par(mar = c(0, 0, 0, 0))  
   
   # Plot the graph
   qgraph(combined_coef_matrix,         
-         layout = custom_layout,       
+         layout = custom_layout_padded,     
          edge.labels = TRUE,             # Display edge labels
          posCol = "navy",                # Positive relationships in blue
          negCol = "red3",                # Negative relationships in red
          labels =  abbrev_names,          # Variable names
          title = plot_title,             # Plot title
-         title.cex = 5,                  
-         label.cex = 4, 
-         asize = 5,
+         title.cex = 0.7,                  
+         label.cex = 0.5,  
+         asize =5,
          edge.label.position = 0.55,
          edge.label.bg ="white",
          vsize = 10,
@@ -158,10 +160,11 @@ df_Sciaenid <- data.frame(Salinity = numeric(),
                           BlueCrab = numeric(),
                           stringsAsFactors = FALSE)
 
-png("path_diagram_AB_Sci.png", width = 1600, height = 2000, bg = "transparent")
-plot_qgraph_combined_with_lag(df_Sciaenid, coef_matrix_AB_Sciaenid_YesLag, plot_title = "Mission Aransas - Sciaenid System", bg_color = "white")
-plot_qgraph_combined_without_lag(df_Sciaenid, coef_matrix_AB_Sciaenid_NoLag, plot_title = "Mission Aransas - Sciaenid System", bg_color = "transparent")
+tiff("path_diagram_AB_Sci.tiff", width = 85,  height = 110, units = "mm", res = 300,bg = "transparent")
+plot_qgraph_combined_with_lag(df_Sciaenid, coef_matrix_AB_Sciaenid_YesLag, plot_title = "Aransas Bay - Sciaenid System", bg_color = "white")
+plot_qgraph_combined_without_lag(df_Sciaenid, coef_matrix_AB_Sciaenid_NoLag, plot_title = "Aransas Bay - Sciaenid System", bg_color = "transparent")
 dev.off()
+
 
 #### GB Sciaenid 
 
@@ -177,11 +180,10 @@ df_Sciaenid <- data.frame(Salinity = numeric(),
                           BlueCrab = numeric(),
                           stringsAsFactors = FALSE)
 
-png("path_diagram_GB_Sci.png",width = 1600, height = 2000, bg = "transparent")
+tiff("path_diagram_GB_Sci.tiff", width = 85,  height = 110, units = "mm", res = 300,bg = "transparent")
 plot_qgraph_combined_with_lag(df_Sciaenid, coef_matrix_GB_Sciaenid_YesLag, plot_title = "Galveston Bay - Sciaenid System", bg_color = "white")
 plot_qgraph_combined_without_lag(df_Sciaenid, coef_matrix_GB_Sciaenid_NoLag, plot_title = "Galveston Bay - Sciaenid System", bg_color = "transparent")
 dev.off()
-
 
 #### AB keystone
 
@@ -197,9 +199,9 @@ df_Pred<- data.frame(Salinity = numeric(),
                           Menhaden = numeric(),
                           stringsAsFactors = FALSE)
 
-png("path_diagram_AB_Pred.png", width = 1600, height = 2000, bg = "transparent")
-plot_qgraph_combined_with_lag(df_Pred, coef_matrix_AB_Pred_YesLag, plot_title = "Mission Aransas - Keystone Predator System", bg_color = "white")
-plot_qgraph_combined_without_lag(df_Pred, coef_matrix_AB_Pred_NoLag, plot_title = "Mission Aransas - Keystone Predator System", bg_color = "transparent")
+tiff("path_diagram_AB_Pred.tiff", width = 85,  height = 110, units = "mm", res = 300,bg = "transparent")
+plot_qgraph_combined_with_lag(df_Pred, coef_matrix_AB_Pred_YesLag, plot_title = "Aransas Bay - Keystone Predator System", bg_color = "white")
+plot_qgraph_combined_without_lag(df_Pred, coef_matrix_AB_Pred_NoLag, plot_title = "Aransas Bay - Keystone Predator System", bg_color = "transparent")
 dev.off()
 
 
@@ -217,11 +219,10 @@ df_Pred<- data.frame(Salinity = numeric(),
                      Menhaden = numeric(),
                      stringsAsFactors = FALSE)
 
-png("path_diagram_GB_Pred.png", width = 1600, height = 2000, bg = "transparent")
+tiff("path_diagram_GB_Pred.tiff",width = 85,  height = 110, units = "mm", res = 300,bg = "transparent")
 plot_qgraph_combined_with_lag(df_Pred, coef_matrix_GB_Pred_YesLag, plot_title = "Galveston Bay - Keystone Predator System", bg_color = "white")
 plot_qgraph_combined_without_lag(df_Pred, coef_matrix_GB_Pred_NoLag, plot_title = "Galveston Bay - Keystone Predator System", bg_color = "transparent")
 dev.off()
-
 
 
 
@@ -267,8 +268,8 @@ plot_qgraph_panel_conceptual <- function(data_ts, coef_matrix, plot_title = "Fit
          negCol = "black",                 
          labels = abbrev_names,            
          title = plot_title,              
-         title.cex = 2,                  
-         label.cex = 1,                 
+         title.cex = 0.7,                  
+         label.cex = 0.5,                 
          vsize = 10,
          asize = 3,
          edge.label.position = 0.55,
@@ -313,12 +314,12 @@ coef_matrix_dummy_Pred["Menhaden", "Mullet"] <- 0
 
 
 # make and save plots
-png("~/Desktop/SciaenidSystem.png", width = 1400, height = 2000, res = 200)
+tiff("~/Desktop/SciaenidSystem.tiff",width = 85,  height = 110, units = "mm", res = 300,bg = "transparent")
 par(mfrow = c(1, 1))
 plot_qgraph_panel_conceptual(df_Sciaenid, coef_matrix_dummy_Sciaenid, plot_title = "Sciaenid System")
 dev.off()
 
-png("~/Desktop/KeystoneSystem.png", width = 1400, height = 2000, res = 200)
+tiff("~/Desktop/KeystoneSystem.tiff",width = 85,  height = 110, units = "mm", res = 300,bg = "transparent")
 par(mfrow = c(1, 1))
 plot_qgraph_panel_conceptual(df_Pred, coef_matrix_dummy_Pred, plot_title = "Keystone Predator System")
 dev.off()
