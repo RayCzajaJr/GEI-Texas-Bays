@@ -1807,11 +1807,11 @@ AIC(fit_semGB_Sciaenid_abiotic)
 AIC(fit_semGB_Sciaenid_notrophics) 
 AIC(fit_semGB_Sciaenid_bottomup_noDD)
 AIC(fit_semGB_Sciaenid_topdown_noDD)
-AIC(fit_semGB_Sciaenid_fullbottomup) #WINNER
-AIC(fit_semGB_Sciaenid_fulltopdown)
+AIC(fit_semGB_Sciaenid_fullbottomup) 
+AIC(fit_semGB_Sciaenid_fulltopdown)#WINNER
 
 # Export model parameters (eg p values) as excel file
-table_semGB_Sciaenid<-summary(fit_semGB_Sciaenid_fullbottomup)
+table_semGB_Sciaenid<-summary(fit_semGB_Sciaenid_fulltopdown)
 write_xlsx(table_semGB_Sciaenid, path = "table_semGB_Sciaenid.xlsx")
 
 # Second System and Major Bay: Keystone Predator Trophic System and Galveston Bay
@@ -2568,7 +2568,7 @@ write_xlsx(table_semGB_Pred, path = "table_semGB_Pred.xlsx")
 
 # The full top-down model is the winner for Aransas Bay for the Keystone Predator System
 # The full bottom-up model is the winner for Galveston Bay for the Keystone Predator System
-# The full top-d0wn model is the winner for Galveston Bay for the sciaenid system
+# The full top-down model is the winner for Galveston Bay for the sciaenid system
 # And the no-trophic relationship model is the winner for Aransas Bay for the sciaenid system 
 
 

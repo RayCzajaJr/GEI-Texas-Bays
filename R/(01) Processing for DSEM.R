@@ -578,7 +578,7 @@ GBMAP<-ggplot() +
   coord_sf(xlim = c(-95.4, -94.5),
            ylim = c(29.0, 29.8)) +
   geom_point(data = GalvestonBay_GN_cpue_map, aes(x = X, y = Y, color = Bay_Area), size = 1.5) +
-  labs(x = "Longitude", y = "Latitude", title = "Galveston Bay System", color = "Minor Bay Area") +
+  labs(x = "Longitude", y = "Latitude", title = "Trinity-San Jacinto Estuary", color = "Bay") +
   theme_bw()+
   scale_color_manual(values = bay_colors_GB) +
   theme(
@@ -586,6 +586,10 @@ GBMAP<-ggplot() +
     legend.title = element_text(size = 8), 
     legend.text = element_text(size = 8), 
     axis.text = element_text(size = 6), 
+    legend.margin = margin(t = 0, r = 0, b = 0, l = 0),    # reduce margin around legend
+    legend.box.margin = margin(t = 0, r = 0, b = 0, l = 0), # reduce margin for the box
+    legend.key.height = unit(0.3, "cm"),                   # shrink keys
+    legend.key.width = unit(0.6, "cm"),
     axis.title = element_text(size = 6),  
     plot.title = element_text(size = 10)  
   )+
@@ -623,13 +627,17 @@ ABMAP<-ggplot() +
   coord_sf(xlim = c(-97.3, -96.7),
            ylim = c(27.8, 28.3)) +
   geom_point(data = AransasBay_GN_cpue_map, aes(x = X, y = Y, color = Bay_Area), size = 1.5) +
-  labs(x = "Longitude", y = "Latitude", title = "Aransas Bay System", color = "Minor Bay Area") +
+  labs(x = "Longitude", y = "Latitude", title = "Mission-Aransas Estuary", color = "Bay") +
   theme_bw()+
   scale_color_manual(values = bay_colors_AB) +
   theme(
     legend.position = "bottom",  
     legend.title = element_text(size = 8), 
     legend.text = element_text(size = 8), 
+    legend.margin = margin(t = 0, r = 0, b = 0, l = 0),    # reduce margin around legend
+    legend.box.margin = margin(t = 0, r = 0, b = 0, l = 0), # reduce margin for the box
+    legend.key.height = unit(0.3, "cm"),                   # shrink keys
+    legend.key.width = unit(0.6, "cm"),
     axis.text = element_text(size = 6), 
     axis.title = element_text(size = 6),  
     plot.title = element_text(size = 10)  
@@ -720,7 +728,7 @@ plot_species_timeseries <- function(df_wide, bay_colors, y_labels) {
   legend_plot <- ggplot(long_df, aes(x = YEAR, y = value, color = bay)) +
     geom_line(size = 2) +
     scale_color_manual(values = bay_colors) +
-    labs(color = "Minor Bay") +
+    labs(color = "Bay") +
     theme_void() +
     theme(
       legend.position = "right",
@@ -779,11 +787,15 @@ pred_labels_AB <- c(
   AlligatorGar = "Alligator Gar CPUE"
 )
 
-plot_species_timeseries(AransasBay_Sciaenid_Wide, aransas_colors, sciaenid_labels)
-plot_species_timeseries(AransasBay_Pred_Wide, aransas_colors, pred_labels_AB)
-plot_species_timeseries(GalvestonBay_Sciaenid_Wide, galveston_colors, sciaenid_labels)
-plot_species_timeseries(GalvestonBay_Pred_Wide, galveston_colors, pred_labels)
+TimeSeriesAB_Sci<-plot_species_timeseries(AransasBay_Sciaenid_Wide, aransas_colors, sciaenid_labels)
+TimeSeriesAB_Pred<-plot_species_timeseries(AransasBay_Pred_Wide, aransas_colors, pred_labels_AB)
+TimeSeriesGB_Sci<-plot_species_timeseries(GalvestonBay_Sciaenid_Wide, galveston_colors, sciaenid_labels)
+TimeSeriesGB_Pred<-plot_species_timeseries(GalvestonBay_Pred_Wide, galveston_colors, pred_labels)
 
+ggsave("TimeSeriesAB_Sci.png", TimeSeriesAB_Sci, width = 16, height = 9, dpi = 200)
+ggsave("TimeSeriesAB_Pred.png", TimeSeriesAB_Pred, width = 16, height = 9, dpi = 200)
+ggsave("TimeSeriesGB_Sci.png", TimeSeriesGB_Sci, width = 16, height = 9, dpi = 200)
+ggsave("TimeSeriesGB_Pred.png", TimeSeriesGB_Pred, width = 16, height = 9, dpi = 200)
 
 # make time series plots of whole bay means of salinity and PDSI for both major bays 
 
@@ -840,8 +852,8 @@ PDSIPLOT<-ggplot(AbioticMeans_long, aes(x = YEAR, y = PDSI, color = Bay, group =
       "AransasBay" = "#2a9d8f",
       "GalvestonBay" = "#f28482"),
     labels = c(
-      "AransasBay" = "Aransas Bay System",
-      "GalvestonBay" = "Galveston Bay System"))+
+      "AransasBay" = "Mission-Aransas Estuary",
+      "GalvestonBay" = "Trinity-San Jacinto Estuary"))+
   labs(
     x = "Year",
     y = "PDSI",

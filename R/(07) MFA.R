@@ -1,5 +1,6 @@
 library("FactoMineR")
 library("factoextra")
+library("stringr")
 
 # add new columns in dfs
 loodf_AB_Pred_PDSI_forplotting$MajorBay <- "AransasBay"
@@ -45,8 +46,8 @@ loodf_PDSI_forPCA <- loodf_PDSI_forPCA %>%
   )
 
 loodf_PDSI_forPCA <- loodf_PDSI_forPCA %>%
-  mutate(MajorBay = ifelse(MajorBay == "AransasBay", "Aransas Bay", MajorBay)) %>%
-  mutate(MajorBay = ifelse(MajorBay == "GalvestonBay", "Galveston Bay", MajorBay))
+  mutate(MajorBay = ifelse(MajorBay == "AransasBay", "Mission-Aransas Estuary", MajorBay)) %>%
+  mutate(MajorBay = ifelse(MajorBay == "GalvestonBay", "Trinity-San Jacinto Estuary", MajorBay))
   
 res.mfa <- MFA(loodf_PDSI_forPCA,
                group = c(1, 1, 1, 1),  
@@ -55,6 +56,7 @@ res.mfa <- MFA(loodf_PDSI_forPCA,
                               "TrophicSystem", "weather"),
                graph = FALSE)
 res.mfa$group
+summary(res.mfa)
 fviz_contrib(res.mfa, "group", axes = 1)
 fviz_contrib(res.mfa, "group", axes = 2)
 
@@ -69,17 +71,18 @@ weatherbiplot<-fviz_mfa_ind(res.mfa,
              mean.point = FALSE,
              label = "none",
              repel = TRUE,
-             pointsize = 3,
+             pointsize = 1,
              legend.title = "Weather Condition")+
   theme(
-    legend.position = "right",         # Move the legend to the top
-    legend.title = element_text(size = 12),  # Customize legend title font size
+    legend.position = "top",         # Move the legend to the top
+    legend.title = element_text(size = 7), 
+    legend.text = element_text(size = 5.7), 
     plot.title = element_blank()     # Remove the plot title
   )
 
 my_colors_bay <- c(
-  "Aransas Bay" =  "#2a9d8f",
-  "Galveston Bay" = "#f28482")
+  "Mission-Aransas Estuary" =  "#2a9d8f",
+  "Trinity-San Jacinto Estuary" = "#f28482")
 
 majorbaybiplot<-fviz_mfa_ind(res.mfa,
              habillage = "MajorBay",  
@@ -88,19 +91,17 @@ majorbaybiplot<-fviz_mfa_ind(res.mfa,
              mean.point = FALSE,
              label = "none",
              repel = TRUE,
-             pointsize = 3,
-             legend.title = "Major Bay")+
+             pointsize = 1,
+             legend.title = "Estuary")+
   theme(
-    legend.position = "right",         # Move the legend to the top
-    legend.title = element_text(size = 12),  # Customize legend title font size
+    legend.position = "top",         # Move the legend to the top
+    legend.title = element_text(size = 7), 
+    legend.text = element_text(size = 5.7), 
     plot.title = element_blank()     # Remove the plot title
   )
 
 biplots <- grid.arrange(majorbaybiplot, weatherbiplot, ncol = 1, nrow = 2)
 
-ggsave("biplots.png", biplots, dpi = 250, bg = "white",
-       width = 2000,
-       height = 2600,
-       units = "px")
+ggsave("biplots.png", biplots, width = 85, height = 190, dpi = 300, units = "mm")
 
 ###############################

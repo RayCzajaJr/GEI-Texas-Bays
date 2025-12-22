@@ -91,7 +91,7 @@ ABpred_totaleffectsplot<-ggplot(totaleffectsABpred_mean, aes(x = to_variable, y 
   geom_bar(stat = "identity", position = "dodge", alpha = 0.7, color = "black") +
   geom_vline(xintercept = vline_positions, linetype = "dashed", color = "gray50") +
   facet_wrap(~ lag, labeller = labeller(lag = lag_labels)) +
-  labs(title = "Aransas Bay - Keystone Predator System",
+  labs(title = "Mission-Aransas Estuary - Keystone Predator System",
        y = "Mean Total Effect", x = "Response", fill = "Predictor") +
   theme_bw() +
   theme(strip.text = element_text(face = "bold", size = 14),
@@ -187,7 +187,7 @@ ABSciaenid_totaleffectsplot<-ggplot(totaleffectsABSciaenid_mean, aes(x = to_vari
   geom_bar(stat = "identity", position = "dodge", alpha = 0.7, color = "black") +
   geom_vline(xintercept = vline_positions, linetype = "dashed", color = "gray50") +
   facet_wrap(~ lag, labeller = labeller(lag = lag_labels)) +
-  labs(title = "Aransas Bay - Sciaenid System",
+  labs(title = "Fina - Sciaenid System",
        y = "Mean Total Effect", x = "Response", fill = "Predictor") +
   theme_bw() +
   theme(strip.text = element_text(face = "bold", size = 14),
@@ -289,7 +289,7 @@ GBSciaenid_totaleffectsplot<-ggplot(totaleffectsGBSciaenid_mean, aes(x = to_vari
   geom_bar(stat = "identity", position = "dodge", alpha = 0.7, color = "black") +
   geom_vline(xintercept = vline_positions, linetype = "dashed", color = "gray50") +
   facet_wrap(~ lag, labeller = labeller(lag = lag_labels)) +
-  labs(title = "Galveston Bay - Sciaenid System",
+  labs(title = "Trinity-San Jacinto Estuary - Sciaenid System",
        y = "Mean Total Effect", x = "Response", fill = "Predictor") +
   theme_bw() +
   theme(strip.text = element_text(face = "bold", size = 14),
@@ -394,7 +394,7 @@ GBpred_totaleffectsplot<-ggplot(totaleffectsGBpred_mean, aes(x = to_variable, y 
   geom_bar(stat = "identity", position = "dodge", alpha = 0.7, color = "black") +
   geom_vline(xintercept = vline_positions, linetype = "dashed", color = "gray50") +
   facet_wrap(~ lag, labeller = labeller(lag = lag_labels)) +
-  labs(title = "Galveston Bay - Keystone Predator System",
+  labs(title = "Trinity-San Jacinto Estuary - Keystone Predator System",
   y = "Mean Total Effect", x = "Response", fill = "Predictor") +
   theme_bw() +
   theme(strip.text = element_text(face = "bold", size = 14),

@@ -536,12 +536,12 @@ AlligatorGar_GalvestonBay <- plot_observed_vs_predicted_no_xtext(
 
 AlligatorGar_TrinityBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Pred, response_var = "AlligatorGar_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Alligator Gar CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = NA, results_df = results_semGB_Pred)
 
 AlligatorGar_WestBay <-plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Pred, response_var = "AlligatorGar_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Alligator Gar CPUE",
   plot_title = NA, results_df = results_semGB_Pred)
 
 AlligatorGar_EastBay <- plot_observed_vs_predicted_no_xtext(
@@ -556,12 +556,12 @@ BullShark_GalvestonBay <- plot_observed_vs_predicted_no_xtext(
 
 BullShark_TrinityBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Pred, response_var = "BullShark_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Bull Shark CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = "Trinity Bay", results_df = results_semGB_Pred)
 
 BullShark_WestBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Pred, response_var = "BullShark_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Bull Shark CPUE",
   plot_title = "West Bay", results_df = results_semGB_Pred)
 
 BullShark_EastBay <- plot_observed_vs_predicted_no_xtext(
@@ -576,12 +576,12 @@ Mullet_GalvestonBay <- plot_observed_vs_predicted_no_xtext(
 
 Mullet_TrinityBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Pred, response_var = "Mullet_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Mullet CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = NA, results_df = results_semGB_Pred)
 
 Mullet_WestBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Pred, response_var = "Mullet_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Mullet CPUE",
   plot_title = NA, results_df = results_semGB_Pred)
 
 Mullet_EastBay <- plot_observed_vs_predicted_no_xtext(
@@ -596,12 +596,12 @@ Menhaden_GalvestonBay <- plot_observed_vs_predicted(
 
 Menhaden_TrinityBay <- plot_observed_vs_predicted(
   df = loodf_GB_Pred, response_var = "Menhaden_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Menhaden CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = NA, results_df = results_semGB_Pred)
 
 Menhaden_WestBay <- plot_observed_vs_predicted(
   df = loodf_GB_Pred, response_var = "Menhaden_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Menhaden CPUE",
   plot_title = NA, results_df = results_semGB_Pred)
 
 Menhaden_EastBay <- plot_observed_vs_predicted(
@@ -618,12 +618,12 @@ RedDrum_GalvestonBay <- plot_observed_vs_predicted_no_xtext(
 
 RedDrum_TrinityBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Sciaenid, response_var = "RedDrum_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Red Drum CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = "Trinity Bay", results_df = results_semGB_Sciaenid)
 
 RedDrum_WestBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Sciaenid, response_var = "RedDrum_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Red Drum CPUE",
   plot_title = "West Bay", results_df = results_semGB_Sciaenid)
 
 RedDrum_EastBay <- plot_observed_vs_predicted_no_xtext(
@@ -638,12 +638,12 @@ SpottedSeatrout_GalvestonBay <- plot_observed_vs_predicted_no_xtext(
 
 SpottedSeatrout_TrinityBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Sciaenid, response_var = "SpottedSeatrout_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Spotted Seatrout CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = NA, results_df = results_semGB_Sciaenid)
 
 SpottedSeatrout_WestBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Sciaenid, response_var = "SpottedSeatrout_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Spotted Seatrout CPUE",
   plot_title = NA, results_df = results_semGB_Sciaenid)
 
 SpottedSeatrout_EastBay <- plot_observed_vs_predicted_no_xtext(
@@ -658,12 +658,12 @@ BlueCrabSmall_GalvestonBay <- plot_observed_vs_predicted(
 
 BlueCrabSmall_TrinityBay <- plot_observed_vs_predicted(
   df = loodf_GB_Sciaenid, response_var = "BlueCrabSmall_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Blue Crab CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = NA, results_df = results_semGB_Sciaenid)
 
 BlueCrabSmall_WestBay <- plot_observed_vs_predicted(
   df = loodf_GB_Sciaenid, response_var = "BlueCrabSmall_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Blue Crab CPUE",
   plot_title = NA, results_df = results_semGB_Sciaenid)
 
 BlueCrabSmall_EastBay <- plot_observed_vs_predicted(
@@ -678,12 +678,12 @@ Atlanticcroaker_GalvestonBay <- plot_observed_vs_predicted_no_xtext(
 
 Atlanticcroaker_TrinityBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Sciaenid, response_var = "Atlanticcroaker_TrinityBay",
-  predictions_color = "#f28482", yaxis_title = "Atlantic Croaker CPUE",
+  predictions_color = "#f28482", yaxis_title = NA,
   plot_title = NA, results_df = results_semGB_Sciaenid)
 
 Atlanticcroaker_WestBay <- plot_observed_vs_predicted_no_xtext(
   df = loodf_GB_Sciaenid, response_var = "Atlanticcroaker_WestBay",
-  predictions_color = "#f28482", yaxis_title = NA,
+  predictions_color = "#f28482", yaxis_title = "Atlantic Croaker CPUE",
   plot_title = NA, results_df = results_semGB_Sciaenid)
 
 Atlanticcroaker_EastBay <- plot_observed_vs_predicted_no_xtext(
@@ -754,10 +754,10 @@ Atlanticcroaker_MesquiteBay <- plot_observed_vs_predicted_no_xtext(
 
 # predator plots
 GB_keystone <- grid.arrange(
-                                        BullShark_TrinityBay,BullShark_GalvestonBay, BullShark_WestBay, BullShark_EastBay, 
-                                        AlligatorGar_TrinityBay,AlligatorGar_GalvestonBay, AlligatorGar_WestBay, AlligatorGar_EastBay,
-                                        Mullet_TrinityBay, Mullet_GalvestonBay, Mullet_WestBay, Mullet_EastBay, 
-                                        Menhaden_TrinityBay, Menhaden_GalvestonBay, Menhaden_WestBay, Menhaden_EastBay,
+  BullShark_WestBay, BullShark_GalvestonBay,  BullShark_EastBay, BullShark_TrinityBay,
+  AlligatorGar_WestBay, AlligatorGar_GalvestonBay, AlligatorGar_EastBay,AlligatorGar_TrinityBay,
+  Mullet_WestBay, Mullet_GalvestonBay,  Mullet_EastBay, Mullet_TrinityBay,
+  Menhaden_WestBay, Menhaden_GalvestonBay, Menhaden_EastBay, Menhaden_TrinityBay,
                                         ncol = 4, nrow = 4)
 
 ggsave("GB_keystone.tiff", GB_keystone, dpi = 300, bg = "white",
@@ -767,10 +767,10 @@ ggsave("GB_keystone.tiff", GB_keystone, dpi = 300, bg = "white",
 
 # prey plots 
 GB_sciaenid <- grid.arrange(
-  RedDrum_TrinityBay, RedDrum_GalvestonBay,RedDrum_WestBay, RedDrum_EastBay,
-  SpottedSeatrout_TrinityBay, SpottedSeatrout_GalvestonBay, SpottedSeatrout_WestBay, SpottedSeatrout_EastBay,
-  Atlanticcroaker_TrinityBay, Atlanticcroaker_GalvestonBay,Atlanticcroaker_WestBay, Atlanticcroaker_EastBay,
-  BlueCrabSmall_TrinityBay,BlueCrabSmall_EastBay, BlueCrabSmall_GalvestonBay, BlueCrabSmall_WestBay,
+  RedDrum_WestBay, RedDrum_GalvestonBay, RedDrum_EastBay, RedDrum_TrinityBay,
+  SpottedSeatrout_WestBay, SpottedSeatrout_GalvestonBay, SpottedSeatrout_EastBay, SpottedSeatrout_TrinityBay,
+  Atlanticcroaker_WestBay, Atlanticcroaker_GalvestonBay, Atlanticcroaker_EastBay, Atlanticcroaker_TrinityBay, 
+BlueCrabSmall_WestBay, BlueCrabSmall_GalvestonBay, BlueCrabSmall_EastBay, BlueCrabSmall_TrinityBay,
   ncol = 4, nrow = 4)
 
 ggsave("GB_sciaenid.tiff", GB_sciaenid,  dpi = 300, bg = "white",
@@ -779,10 +779,10 @@ ggsave("GB_sciaenid.tiff", GB_sciaenid,  dpi = 300, bg = "white",
        units = "mm")
 
 AB_keystone <- grid.arrange(
-                          BullShark_AransasBay, BullShark_CopanoBay, BullShark_MesquiteBay,
-                          AlligatorGar_AransasBay, AlligatorGar_CopanoBay, AlligatorGar_MesquiteBay,
-                          Mullet_AransasBay, Mullet_CopanoBay, Mullet_MesquiteBay,
-                          Menhaden_AransasBay, Menhaden_CopanoBay, Menhaden_MesquiteBay,
+                          BullShark_AransasBay, BullShark_MesquiteBay,BullShark_CopanoBay,
+                          AlligatorGar_AransasBay, AlligatorGar_MesquiteBay, AlligatorGar_CopanoBay,
+                          Mullet_AransasBay, Mullet_MesquiteBay, Mullet_CopanoBay,
+                          Menhaden_AransasBay, Menhaden_MesquiteBay, Menhaden_CopanoBay, 
                           ncol = 3, nrow = 4)
 
 ggsave("AB_keystone.tiff", AB_keystone,  dpi = 300, bg = "white",
@@ -792,10 +792,10 @@ ggsave("AB_keystone.tiff", AB_keystone,  dpi = 300, bg = "white",
 
 
 AB_sciaenid  <- grid.arrange(
-  RedDrum_AransasBay, RedDrum_CopanoBay, RedDrum_MesquiteBay,
-  SpottedSeatrout_AransasBay, SpottedSeatrout_CopanoBay, SpottedSeatrout_MesquiteBay,
-  Atlanticcroaker_AransasBay, Atlanticcroaker_CopanoBay, Atlanticcroaker_MesquiteBay,
-  BlueCrabSmall_AransasBay, BlueCrabSmall_CopanoBay, BlueCrabSmall_MesquiteBay,
+  RedDrum_AransasBay, RedDrum_MesquiteBay, RedDrum_CopanoBay,
+  SpottedSeatrout_AransasBay,SpottedSeatrout_MesquiteBay, SpottedSeatrout_CopanoBay, 
+  Atlanticcroaker_AransasBay, Atlanticcroaker_MesquiteBay,Atlanticcroaker_CopanoBay,
+  BlueCrabSmall_AransasBay, BlueCrabSmall_MesquiteBay, BlueCrabSmall_CopanoBay,
   ncol = 3, nrow = 4)
 
 ggsave("AB_sciaenid.tiff", AB_sciaenid,  dpi = 300, bg = "white",
@@ -845,47 +845,92 @@ species_colors <- c(
   "Menhaden" = "#90a955"
 )
 
+species_shapes <- c(
+  "BullShark" = 21,
+  "AlligatorGar" = 21,
+  "RedDrum" = 21,
+  "SpottedSeatrout" = 21,
+  "BlueCrab" = 24,
+  "AtlanticCroaker" = 24,
+  "Mullet" = 24,
+  "Menhaden" = 24
+)
+
 squared_df <- squared_df %>%
   mutate(species = ifelse(species == "Atlanticcroaker", "AtlanticCroaker", species))
 
-plot_keystone <- ggplot(squared_df %>% filter(trophic_system == "Keystone Predator"), 
-                        aes(x = bay, y = spearman_rho, fill = species)) +
-  geom_point(size = 9, alpha = 0.7, shape = 21, color = "black", stroke = 1.2) +
-  scale_fill_manual(values = species_colors) +  
-  scale_y_continuous(limits = c(0.15, 0.90), breaks = seq(0.15, 0.90, by = 0.1)) +  
-  theme_bw() +      theme(axis.text.x = element_text(angle = 45, hjust = 1),  
-                          axis.title.x = element_text(size = 12),  
-                          axis.title.y = element_text(size = 12),  
-                          legend.position = "top", 
-                          legend.direction = "horizontal",  
-                          legend.title = element_blank(),  # Removes the legend title
-                          legend.text = element_text(size = 12),  
-                          plot.title = element_text(size = 14, face = "bold", hjust = 0.5),  # Centers title above legend
-                          axis.text.y = element_text(size = 12)) + 
-  labs(title = "Keystone Predator Trophic System",  # Title above the legend
-       x = "Minor Bay", 
-       y = "Spearman Rho")
+# Add a new size variable
+squared_df <- squared_df %>%
+  mutate(point_size = ifelse(species %in% c("BlueCrab", "AtlanticCroaker", "Mullet", "Menhaden"), 6, 9))
+# 6 = smaller triangles, 9 = default circles
 
-plot_sciaenid <- ggplot(squared_df %>% filter(trophic_system == "Sciaenid"), 
-                        aes(x = bay, y = spearman_rho, fill = species)) +
-  geom_point(size = 9, alpha = 0.7, shape = 21, color = "black", stroke = 1.2) +
-  scale_fill_manual(values = species_colors) +  
-  scale_y_continuous(limits = c(0.15, 0.90), breaks = seq(0.15, 0.90, by = 0.1)) +  
-  theme_bw() +    theme(axis.text.x = element_text(angle = 45, hjust = 1),  
-                        axis.title.x = element_text(size = 12),  
-                        axis.title.y = element_text(size = 12),  
-                        legend.position = "top", 
-                        legend.direction = "horizontal",  
-                        legend.title = element_blank(),  # Removes the legend title
-                        legend.text = element_text(size = 12),  
-                        plot.title = element_text(size = 14, face = "bold", hjust = 0.5),  # Centers title above legend
-                        axis.text.y = element_text(size = 12)) + 
-  labs(title = "Sciaenid Trophic System",  # Title above the legend
-       x = "Minor Bay", 
-       y = "Spearman Rho")
+bay_order <- c(
+  "Aransas Bay",
+  "Mesquite Bay",
+  "Copano Bay",
+  "West Bay",
+  "Galveston Bay",
+  "East Bay",
+  "Trinity Bay"
+)
 
-rhoplot<-grid.arrange(plot_keystone, plot_sciaenid, ncol = 2)
+# Keystone Predator plot
+plot_keystone <- ggplot(
+  squared_df %>% filter(trophic_system == "Keystone Predator"), 
+  aes(x = bay, y = spearman_rho, fill = species, shape = species, size = point_size)
+) +
+  geom_point(alpha = 0.7, color = "black", stroke = 1.2) +   # size is mapped from aes
+  scale_size_identity() +   # uses the size values literally
+  scale_fill_manual(values = species_colors) +
+  scale_shape_manual(values = species_shapes) +
+  scale_y_continuous(limits = c(0.10, 0.90), breaks = seq(0.10, 0.90, by = 0.1)) +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.position = "top",
+    legend.direction = "horizontal",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 12),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.text.y = element_text(size = 12)) +
+  guides(
+    fill = guide_legend(override.aes = list(size = 6)),    # adjust legend point sizes
+    shape = guide_legend(override.aes = list(size = 6)))+
+   scale_x_discrete(limits = bay_order)+
+  labs(title = "Keystone Predator Trophic System", x = "Bay", y = "Spearman Rho")
 
+# Sciaenid plot (same approach)
+plot_sciaenid <- ggplot(
+  squared_df %>% filter(trophic_system == "Sciaenid"), 
+  aes(x = bay, y = spearman_rho, fill = species, shape = species, size = point_size)
+) +
+  geom_point(alpha = 0.7, color = "black", stroke = 1.2) +
+  scale_size_identity() +
+  scale_fill_manual(values = species_colors) +
+  scale_shape_manual(values = species_shapes) +
+  scale_y_continuous(limits = c(0.10, 0.90), breaks = seq(0.10, 0.90, by = 0.1)) +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.position = "top",
+    legend.direction = "horizontal",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 12),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.text.y = element_text(size = 12)
+  ) +
+  guides(
+    fill = guide_legend(override.aes = list(size = 6)),    # adjust legend point sizes
+    shape = guide_legend(override.aes = list(size = 6)))+
+  scale_x_discrete(limits = bay_order)+
+  labs(title = "Sciaenid Trophic System", x = "Bay", y = "Spearman Rho")
+
+# Arrange
+rhoplot <- grid.arrange(plot_keystone, plot_sciaenid, ncol = 2)
 ggsave("rhoplot.png", rhoplot, dpi = 150, bg = "white",
        width = 2000,
        height = 1000,

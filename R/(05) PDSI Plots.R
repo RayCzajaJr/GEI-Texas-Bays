@@ -168,6 +168,20 @@ loodf_AB_Sciaenid_PDSI_forplotting_filtered  <- loodf_AB_Sciaenid_PDSI_forplotti
   )
 
 # Create the sciaenid bar plots
+order_AB_sciaenid <- c(
+  "Atlantic Croaker (AB)",
+  "Atlantic Croaker (MB)",
+  "Atlantic Croaker (CB)",
+  "Blue Crab  (AB)",
+  "Blue Crab  (MB)",
+  "Blue Crab  (CB)",
+  "Red Drum (AB)",
+  "Red Drum (MB)",
+  "Red Drum (CB)",
+  "Spotted Seatrout (AB)",
+  "Spotted Seatrout (MB)",
+  "Spotted Seatrout (CB)")
+
 PDSI_plot_AB_sciaenid<- ggplot(loodf_AB_Sciaenid_PDSI_forplotting_filtered, aes(x = Var2, y = mean_obs, fill = weather)) +
     geom_bar(stat = "identity", position = "dodge", width = 0.7, color = "black", alpha = 0.8) +
   geom_errorbar(aes(
@@ -176,15 +190,34 @@ PDSI_plot_AB_sciaenid<- ggplot(loodf_AB_Sciaenid_PDSI_forplotting_filtered, aes(
   ), width = 0.25, position = position_dodge(0.7)) +  
     scale_fill_manual(values = c("Severely Dry" = "#e9c46a", "Severely Wet" = "#264653")) +
   theme_bw() +  
-  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Aransas Bay - Sciaenid System")+
+  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Mission-Aransas Estuary - Sciaenid System")+
   theme(
     axis.text.x = element_text(angle = 65, hjust = 1, size = 6),  
     axis.text.y = element_text(size = 6),
     axis.title.x = element_text(size = 7),
     axis.title.y = element_text(size = 8),
-    plot.title = element_text(size = 10),
-    legend.position="none") 
+    plot.title = element_text(size = 8.5),
+    legend.position="none") +
+  scale_x_discrete(limits = order_AB_sciaenid) 
 print(PDSI_plot_AB_sciaenid)
+
+order_GB_sciaenid <- c(
+  "Atlantic Croaker (WB)",
+  "Atlantic Croaker (GB)",
+  "Atlantic Croaker (EB)",
+  "Atlantic Croaker (TB)",
+  "Blue Crab  (WB)",
+  "Blue Crab (GB)",
+  "Blue Crab  (EB)",
+  "Blue Crab  (TB)",
+  "Red Drum (WB)",
+  "Red Drum (GB)",
+  "Red Drum (EB)",
+  "Red Drum (TB)",
+  "Spotted Seatrout (WB)",
+  "Spotted Seatrout (GB)",
+  "Spotted Seatrout (EB)",
+  "Spotted Seatrout (TB)")
 
 PDSI_plot_GB_sciaenid <- ggplot(loodf_GB_Sciaenid_PDSI_forplotting_filtered, aes(x = Var2, y = mean_obs, fill = weather)) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, color = "black", alpha = 0.8) +
@@ -194,18 +227,34 @@ PDSI_plot_GB_sciaenid <- ggplot(loodf_GB_Sciaenid_PDSI_forplotting_filtered, aes
   ), width = 0.25, position = position_dodge(0.7)) +  
   scale_fill_manual(values = c("Severely Dry" = "#e9c46a", "Severely Wet" = "#264653")) +
   theme_bw() +  
-  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Galveston Bay - Sciaenid System")+
+  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Trinity-San Jacinto Estuary - Sciaenid System")+
   theme(
     axis.text.x = element_text(angle = 65, hjust = 1, size = 6),  
     axis.text.y = element_text(size = 6),
     axis.title.x = element_text(size = 7),
     axis.title.y = element_text(size = 8),
-    plot.title = element_text(size = 10),
-    legend.position="none") 
+    plot.title = element_text(size = 8.5),
+    legend.position="none") +
+  scale_x_discrete(limits = order_GB_sciaenid) 
 print(PDSI_plot_GB_sciaenid)
 
 
 # Create the keystone bar plots
+
+order_AB_keystone <- c(
+  "Mullet (AB)",
+  "Mullet (MB)",
+  "Mullet (CB)",
+  "Menhaden (AB)",
+  "Menhaden (MB)",
+  "Menhaden (CB)",
+  "Alligator Gar (AB)",
+  "Alligator Gar (MB)",
+  "Alligator Gar (CB)",
+  "Bull Shark (AB)",
+  "Bull Shark (MB)",
+  "Bull Shark (CB)")
+
 PDSI_plot_AB_keystone<- ggplot(loodf_AB_Pred_PDSI_forplotting_filtered, aes(x = Var2, y = mean_obs, fill = weather)) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, color = "black", alpha = 0.8) +
   geom_errorbar(aes(
@@ -214,13 +263,13 @@ PDSI_plot_AB_keystone<- ggplot(loodf_AB_Pred_PDSI_forplotting_filtered, aes(x = 
   ), width = 0.25, position = position_dodge(0.7)) +  
   scale_fill_manual(values = c("Severely Dry" = "#e9c46a", "Severely Wet" = "#264653")) +
   theme_bw() +  
-  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Aransas Bay - Keystone Predator System")+
+  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Mission-Aransas Estuary - Keystone Predator System")+
   theme(
     axis.text.x = element_text(angle = 65, hjust = 1, size = 6),  
     axis.text.y = element_text(size = 6),
     axis.title.x = element_text(size = 7),
     axis.title.y = element_text(size = 8),
-    plot.title = element_text(size = 10),
+    plot.title = element_text(size = 8.5),
     legend.position="none")  +
   annotate("text", 
            x = 4.8,  
@@ -231,8 +280,27 @@ PDSI_plot_AB_keystone<- ggplot(loodf_AB_Pred_PDSI_forplotting_filtered, aes(x = 
            x = 4.8,  
            y = 1.55 ,
            label = paste("MAE Severely Wet Mean PDSI = ", round(mean_PDSI_wet_AB, 1)),
-           size = 1.8, hjust = 0, vjust = 0.5, color = "black") 
+           size = 1.8, hjust = 0, vjust = 0.5, color = "black") +
+  scale_x_discrete(limits = order_AB_keystone) 
 print(PDSI_plot_AB_keystone)
+
+order_GB_keystone <- c(
+  "Mullet (WB)",
+  "Mullet (GB)",
+  "Mullet (EB)",
+  "Mullet (TB)",
+  "Menhaden (WB)",
+  "Menhaden (GB)",
+  "Menhaden (EB)",
+  "Menhaden (TB)",
+  "Alligator Gar (WB)",
+  "Alligator Gar (GB)",
+  "Alligator Gar (EB)",
+  "Alligator Gar (TB)",
+  "Bull Shark (WB)",
+  "Bull Shark (GB)",
+  "Bull Shark (EB)",
+  "Bull Shark (TB)")
 
 PDSI_plot_GB_keystone <- ggplot(loodf_GB_Pred_PDSI_forplotting_filtered, aes(x = Var2, y = mean_obs, fill = weather)) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7, color = "black", alpha = 0.8) +
@@ -242,14 +310,14 @@ PDSI_plot_GB_keystone <- ggplot(loodf_GB_Pred_PDSI_forplotting_filtered, aes(x =
   ), width = 0.25, position = position_dodge(0.7)) +  
   scale_fill_manual(values = c("Severely Dry" = "#e9c46a", "Severely Wet" = "#264653")) +
   theme_bw() +  
-  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Galveston Bay - Keystone Predator System")+
+  labs(x = NULL,y = "Mean Standardized CPUE", fill = NULL, title = "Trinity-San Jacinto Estuary - Keystone Predator System")+
   theme(
     axis.text.x = element_text(angle = 65, hjust = 1, size = 6),  
     axis.text.y = element_text(size = 6),
     axis.title.x = element_text(size = 7),
     axis.title.y = element_text(size = 8),
-    plot.title = element_text(size = 10),
-    legend.position = c(0.19, 0.85),  
+    plot.title = element_text(size = 8.5),
+    legend.position = c(0.21, 0.85),  
     legend.title = element_text(size = 6),
     legend.text = element_text(size = 8),
     legend.background = element_blank(),
@@ -258,13 +326,14 @@ PDSI_plot_GB_keystone <- ggplot(loodf_GB_Pred_PDSI_forplotting_filtered, aes(x =
   annotate("text", 
            x = 7.0,  
            y = 2.75,  
-           label = paste("GBE Severely Dry Mean PDSI = ", round(mean_PDSI_dry_GB, 1)),
+           label = paste("TSJE Severely Dry Mean PDSI = ", round(mean_PDSI_dry_GB, 1)),
            size = 1.8, hjust = 0, vjust = 0.5, color = "black") +
   annotate("text", 
            x = 7.0,  
            y = 2.45,  
-           label = paste("GBE Severely Wet Mean PDSI = ", round(mean_PDSI_wet_GB, 1)),
-           size = 1.8, hjust = 0, vjust = 0.5, color = "black") 
+           label = paste("TSJE Severely Wet Mean PDSI = ", round(mean_PDSI_wet_GB, 1)),
+           size = 1.8, hjust = 0, vjust = 0.5, color = "black") +
+  scale_x_discrete(limits = order_GB_keystone) 
 print(PDSI_plot_GB_keystone)
 
 # export plots
@@ -287,10 +356,10 @@ ggsave("PDSI_Plots_AB.png", PDSI_Plots_AB, dpi = 150, bg = "white",
 PDSI_Plots_GB <- grid.arrange(PDSI_plot_GB_sciaenid, PDSI_plot_GB_keystone,
                                          ncol = 1, nrow = 2)
 
-ggsave("PDSI_Plots_GB.png", PDSI_Plots_GB, dpi = 150, bg = "white",
-       width = 1600,
-       height = 2000,
-       units = "px") 
+ggsave("PDSI_Plots_GB.png", PDSI_Plots_GB, dpi = 300, bg = "white",
+       width = 170,
+       height = 170,
+       units = "mm") 
 
 
 
